@@ -1,15 +1,14 @@
 window.addEventListener('load', init);
-// To change level
 const currentLevel = 7;
 let time = currentLevel;
 let score = 0;
 let isPlaying;
-const wordInput = document.querySelector('#word-input');
-const currentWord = document.querySelector('#current-word');
-const scoreDisplay = document.querySelector('#score');
-const timeDisplay = document.querySelector('#time');
-const message = document.querySelector('#message');
-const seconds = document.querySelector('#seconds');
+const currentWord = document.getElementById("current-word");
+const wordInput = document.getElementById("word-input");
+const message = document.getElementById("message");
+const timeDisplay = document.getElementById("time");
+const scoreDisplay = document.getElementById("score");
+const seconds = document.getElementById("seconds");
 
 const words =['doll' , 'heavenly', 'head' , 'steam',' gorgeous', 'ticket', 'doubt', 'depressed', 'chilly', 'actor', 'multiply', 'pump', 'cultured', 'jelly','combative', 'skillful',
 'sin,spray', 'love', 'materialistic', 'extra', 'tranqui', 'adaptable', 'chalk', 'view', 'funny', 'camp', 'company', 'pack', 'suck', 'scared',
@@ -57,10 +56,9 @@ function countdown() {
   if (time > 0) {
     time--;
   } else if (time === 0) {
-    // Game is over
+    // Game over
     isPlaying = false;
   }
-  // Show time
   timeDisplay.innerHTML = time;
 }
 function checkStatus() {
